@@ -16,6 +16,8 @@ def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
 	
+
+# can use even arrat of answers
 output = query({
 	"inputs": {
 	"source_sentence": "That is a happy person",
