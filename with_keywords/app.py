@@ -19,7 +19,7 @@ templates = Jinja2Templates(directory="templates")
 #app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Load the trained model and scaler
-model = tf.keras.models.load_model("model/model.h5", custom_objects={'mse': tf.keras.losses.MeanSquaredError()})
+model = tf.keras.models.load_model("flask_app/model/saved_model")
 scaler = pickle.load(open("model/scaler.pkl", "rb"))
 
 @app.get("/", response_class=HTMLResponse)
